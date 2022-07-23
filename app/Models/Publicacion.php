@@ -27,4 +27,9 @@ class Publicacion extends Model
         'imagen',
         'linkVideo'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(Imagen::class, 'idPublicacion', 'id');
+    }
 }

@@ -20,7 +20,7 @@ class WebController extends Controller
     public function index()
     {
         $id = 2;
-        $publications = Publicacion::where('idUsuario', $id)->orderBy('orden', 'asc')->get();
+        $publications = Publicacion::where('idUsuario', $id)->with('images')->orderBy('orden', 'asc')->get();
 
         $services = Servicio::where('idUsuario', $id)->orderBy('nombre', 'asc')->get();
         $buttons = Boton::where('idUsuario', $id)->orderBy('orden', 'asc')->get();
